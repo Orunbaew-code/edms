@@ -1,0 +1,481 @@
+#login-form {
+    background-color: #EEF;
+    padding: 40px;
+    border-radius: 5px;
+    width: 300px;
+    height: fit-content;
+    text-align: center;
+    box-shadow: 0px 20px 50px rgba(0, 0, 0, 0.3);
+    /* Subtle shadow for depth */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+input[type="text"],
+input[type="password"] {
+    padding: 10px;
+    border: 1px solid #ddd;
+    /* Light grey border */
+    border-radius: 3px;
+    width: 100%;
+    font-size: 16px;
+    /* Modest font size */
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #33475b;
+    /* Dark blue text */
+}
+
+button {
+    background-color: #2ECC71;
+    /* Dark blue button */
+    color: #fff;
+    text-align: center;
+    margin-top: 50;
+    padding: 10px 75px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 16px;
+    /* Modest font size */
+}
+
+.error-message {
+    color: red;
+    display: none;
+}
+
+
+/*__________________________Header________________________*/
+
+header {
+    background-color: #2ECC71;
+    /* Green background color */
+    color: #fff;
+    /* White text color */
+    padding: 20px;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    /* Stay at the top of the viewport */
+    width: 100%;
+    /* Stretch across the entire page */
+    z-index: 999;
+    /* Ensure it stays on top of other content */
+    /* Add other styling as needed (background color, padding, etc.) */
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #FFF;
+    font-size: 16px;
+}
+
+nav ul li a:hover {
+    color: #5F9;
+}
+
+.category {
+    height: flex;
+}
+
+
+/*______________header____________________*/
+
+.document-filter {
+    padding-top: 50px;
+    border-bottom: 1px solid #ddd;
+}
+
+.search-group {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 5px 10px;
+}
+
+.document-list {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.document-list a {
+    color: #2ECC71;
+}
+
+.write-comment {
+    height: 100px;
+}
+
+.document-item {
+    width: 50vh;
+    margin: 10px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.document-item h3 {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.document-item p {
+    margin-bottom: 10px;
+}
+
+.document-item .first-page {
+    width: 100px;
+    height: 150px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.settings {
+    justify-content: center;
+    display: flex;
+    justify-items: center;
+}
+
+.upload-doc {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 50px;
+    margin: 50px;
+    float: center;
+}
+
+.comment-p {
+    min-height: 100px;
+}
+
+.add-doc-button {
+    float: center;
+}
+
+
+/* MainChat________________________________________________________________________________________ */
+
+.mainChat {
+    display: flex;
+    height: 80vh;
+}
+
+
+/* Contacts List */
+
+.contacts {
+    width: 250px;
+    border-right: 1px solid #ddd;
+    padding: 10px;
+}
+
+.contacts ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.contacts a {
+    text-decoration: none;
+    color: #333;
+    display: block;
+}
+
+.contacts li {
+    padding: 10px 5px;
+    cursor: pointer;
+    border-bottom: 1px solid #eee;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.contacts li:hover {
+    background-color: #f5f5f5;
+}
+
+.contacts .avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.contacts .group-name,
+.contacts .username {
+    font-weight: bold;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.contacts .unread-messages {
+    color: red;
+    font-size: 12px;
+    float: right;
+}
+
+.contacts .online-status {
+    font-size: 10px;
+    color: green;
+}
+
+
+/* Chat Window */
+
+.chat-window {
+    flex: 1;
+    padding: 10px;
+}
+
+#chat-messages {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    height: calc(100vh - 130px);
+    /* Account for form height and padding */
+    overflow-y: scroll;
+}
+
+#chat-messages li {
+    margin-bottom: 10px;
+    padding: 15px;
+    border-radius: 5px;
+    position: relative;
+}
+
+.message.group-message,
+.message.announcement {
+    background-color: #eee;
+    width: fit-content;
+    max-width: 130vh;
+}
+
+.message.private-message {
+    background-color: #ffa;
+    width: fit-content;
+    max-width: 130vh;
+}
+
+.message img.avatar {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
+.message strong {
+    font-weight: bold;
+}
+
+.message .timestamp {
+    font-size: 10px;
+    color: #aaa;
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+}
+
+
+/* Message Form */
+
+#message-form {
+    display: flex;
+    margin-top: 10px;
+}
+
+#message-input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#message-form button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#message-form button:hover {
+    background-color: #3e8e41;
+}
+
+
+/* Overall Form Styling */
+
+.addNewDoc {
+    display: flex;
+    /* Change to block if you prefer a vertical layout */
+    flex-direction: column;
+    /* Stacks elements vertically */
+    padding: 20px;
+    /* Adjust padding for spacing */
+    margin: 0 auto;
+    /* Centers the form horizontally */
+    border: 1px solid #ddd;
+    /* Optional border */
+    border-radius: 5px;
+    /* Optional rounded corners */
+}
+
+
+/* Labels */
+
+.addNewDoc label {
+    display: block;
+    /* Makes labels appear on separate lines */
+    margin-bottom: 5px;
+    /* Spacing between label and input */
+    font-weight: bold;
+}
+
+
+/* File Input */
+
+.addNewDoc input[type=file] {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    /* Optional rounded corners */
+}
+
+
+/* Textarea */
+
+.addNewDoc textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    /* Optional rounded corners */
+    width: 100%;
+    /* Expands textarea to full width */
+    resize: vertical;
+    /* Allows users to resize the textarea vertically */
+}
+
+
+/* Submit Button */
+
+.addNewDoc button[type=submit] {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    /* Adjust button color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    /* Optional rounded corners */
+    cursor: pointer;
+}
+
+.addNewDoc button[type=submit]:hover {
+    background-color: #3e8e41;
+    /* Adjust button hover color */
+}
+
+
+/* Overall Form Styling */
+
+.addNewAssignment {
+    display: flex;
+    /* Optional for horizontal layout */
+    flex-direction: column;
+    /* Stacks elements vertically */
+    width: 500px;
+    /* Adjust width as needed */
+    margin: 20px auto;
+    /* Centers the form */
+    padding: 20px;
+    /* Adjust padding for spacing */
+    border: 1px solid #ccc;
+    /* Optional border */
+    border-radius: 5px;
+    /* Optional rounded corners */
+}
+
+
+/* Form Group */
+
+.form-group {
+    margin-bottom: 15px;
+    /* Spacing between form groups */
+}
+
+
+/* Labels */
+
+.addNewAssignment label {
+    display: block;
+    /* Makes labels appear on separate lines */
+    font-weight: bold;
+    margin-bottom: 5px;
+    /* Spacing between label and input */
+}
+
+
+/* Textareas */
+
+.addNewAssignment textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    /* Optional rounded corners */
+    resize: vertical;
+    /* Allow vertical resizing */
+}
+
+
+/* Select */
+
+.addNewAssignment select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    /* Optional rounded corners */
+    width: 100%;
+    /* Expand to full width */
+}
+
+
+/* Submit Button */
+
+.addNewAssignment button[type="submit"] {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    /* Adjust button color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    /* Optional rounded corners */
+    cursor: pointer;
+}
+
+.addNewAssignment button[type="submit"]:hover {
+    background-color: #3e8e41;
+    /* Adjust button hover color */
+}
